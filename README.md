@@ -32,7 +32,7 @@ The reason for doing this is that the 'Append to Array variable accepts values w
 You need to do this in order to using in a Select statement or parse to PowerApps
 
 
-# PowerApps Code for turning JSON into Collection
+# PowerApps Code for turning JSON Response From Flow into Collection
 
 Set(varGetGroups, GetM365Groups.Run().resp); //Run Flow
 
