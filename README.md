@@ -13,7 +13,7 @@ The Flow returns an Object {}, but what is needed to  be extracted is the value:
       "createdDateTime": "2024-10-30T12:30:57Z",
       "creationOptions": []......
 
-#TURN ARRAY INTO OBJECTS (Take out the surrounding [])
+# TURN ARRAY INTO OBJECTS (Take out the surrounding [])
 
 Use the join() expression targetted at the value (  @{join(body('GetGroupConn')?['value'],',')}  ) to take out the surrounding [] from the returned json.
 THE RESULT
@@ -32,7 +32,7 @@ The reason for doing this is that the 'Append to Array variable accepts values w
 You need to do this in order to using in a Select statement or parse to PowerApps
 
 
-#PowerApps Code for turning JSON into Collection
+# PowerApps Code for turning JSON into Collection
 
 Set(varGetGroups, GetM365Groups.Run().resp); //Run Flow
 
@@ -60,7 +60,7 @@ If(!IsBlank(varGetGroups),
 The Filter Operation filter for Distribution list only
 
 
-#FULL CODE PREVIEW
+# FULL CODE PREVIEW
 
 
 1. Initialize an Empty Array
@@ -74,7 +74,7 @@ The Filter Operation filter for Distribution list only
      "value": "@body('GetGroupConn')?['@odata.nextLink']"
 
 
-   #DO UNTIL LOOP
+   # DO UNTIL LOOP
    {
   "type": "Until",
   "expression": "@equals(variables('varNextLink'),'')",
@@ -142,7 +142,7 @@ The Filter Operation filter for Distribution list only
 }
 
 
-#ACTIONS AFTER THE DO UNTIL LOOP
+# ACTIONS AFTER THE DO UNTIL LOOP
 
 COMPOSE //
 {
